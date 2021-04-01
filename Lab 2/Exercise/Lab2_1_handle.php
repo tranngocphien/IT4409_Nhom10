@@ -5,11 +5,14 @@
     <body>
         <?php
             $name = $_POST["name"];
+			$birth= $_POST["birth"];
             $university = $_POST["university"];
             $class = $_POST["class"];
             $hobby = $_POST["hobby"];
             print ("Hello, $name ");
-            print ("<br>");
+            print ("<br>");	
+			print ("Your birthday:, $birth");
+			print ("<br>");
             print ("You are studing at $class, $university");
             print ("<br>");
             print ("Your hobby is: ");
