@@ -111,28 +111,35 @@
 			            if ($day > 30) {
 			                echo "<br>Bad choice! Choose again"; break;
 			            }
-			            else $d = 30;
+			            else $d = 30; break;
 			        case 2:
 			            if ($year % 400 == 0 || ($year % 4 == 0 && $year % 100 != 0)) {
 			                if ($day > 29) {
 			                    echo "<br>Bad choice! Choose again"; break;
 			                }
-			                else $d = 29;
+			                else $d = 29; break;
 			            }
 			            else if ($day > 28) {
 			                echo "<br>Bad choice! Choose again"; break;
 			            }
-			            else $d = 28;
-			        default: 
-			            echo "You have chosen to have an appointment on ".$hour.":".$minute.":".$sec.", ".$day."/".$month."/".$year."<br>";
-			            echo "<br>More information<br>";
-			            echo "<br>In 12 hours, the time and date is ";
-			            if ($hour>12)
-			                echo ($hour-12).":".$minute.":".$sec." PM, ";
-			                else echo $hour.":".$minute.":".$sec." AM, ";
-			                echo $day."/".$month."/".$year."<br>";
-			                echo "<br>This month has ".$d." days!";
-			    }			    
+			            else $d = 28; break;
+					case 1:
+					case 3:
+					case 5:
+					case 7:
+					case 8: 
+					case 10: 
+					case 12: 
+						$d=31; break;						
+			    }	
+			echo "You have chosen to have an appointment on ".$hour.":".$minute.":".$sec.", ".$day."/".$month."/".$year."<br>";
+			echo "<br>More information<br>";
+			echo "<br>In 12 hours, the time and date is ";
+			if ($hour>12)
+				echo ($hour-12).":".$minute.":".$sec." PM, ";
+				else echo $hour.":".$minute.":".$sec." AM, ";
+				echo $day."/".$month."/".$year."<br>";
+				echo "<br>This month has ".$d." days!";		
 			} 						
 			?>
 		</form>
