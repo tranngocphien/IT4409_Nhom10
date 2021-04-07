@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Color</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script>
+            function onMouseOverRed(){
+                document.getElementById('text').style.color = "red";
+            }
+            function onMouseOverGreen(){
+                document.getElementById('text').style.color = "green";
+
+            }
+            function onMouseOverBlue(){
+                document.getElementById('text').style.color = "blue";
+
+            }
+            function onMouseOut(){
+                document.getElementById('text').style.color = "black";
+                
+            }
+
+        </script>
+        
+        <style>
+            a {
+                padding:   20px;
+                text-align: center;
+                width: 200px;
+            }
+        </style>
+    </head>
+    <body>
+        <div style="display: flex; justify-content: space-between; width: 100%">
+        <a href="" style="color: red; border: 1px solid red" onmouseover="onMouseOverRed()" onmouseout="onMouseOut()" >RED</a>
+        <br>
+        <a href="" style="color: green; border: 1px solid green" onmouseover="onMouseOverGreen()" onmouseout="onMouseOut()">GREEN</a>
+        <br>
+        <a href="" style="color: blue; border: 1px solid blue" onmouseover="onMouseOverBlue()" onmouseout="onMouseOut()" >BLUE</a>
+        <br>
+        </div>
+        <p id="text">Write a simple HTML document called colors.HTML containing three colored links at the top of the page labeled RED, GREEN, and BLUE. Under the links there should be a small paragraph of text (you make this up) with a starting color of BLACK. Using onMouseOver and onMouseOut events of the links, when a user rolls over the each and any of the color labeled links, the color of the text in the paragraph below should change to the color corresponding to the link the user is hovering over. When the user rolls off the link, the color of the text should go back to it's starting color of BLACK. </p>
+    </body>
+</html>
