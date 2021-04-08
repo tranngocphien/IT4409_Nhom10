@@ -9,19 +9,34 @@ and open the template in the editor.
         <title>TODO supply a title</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            input {
+                height: 44px;
+                width: 440px;
+                padding: 8px;
+                margin: 8px;
+            }
+        </style>
         <script>
             function addBlog() {
                 var d = new Date();
                 d.setTime(d.getTime() + (24*60*60*1000));
                 var expires = "expires="+ d.toUTCString();
                 var text  = document.getElementById('text').value;
+                var name = document.getElementById('name').value;
                 document.cookie = "favorite=" + text + ";" + expires + ";path=/";
+                document.cookie = "name=" + name + ";" + expires + ";path=/";
             }
         </script>
     </head>
     <body>
+        Name
+        <br>
+        <input type="text" id="name" onkeypress="addBlog()" onkeyup="addBlog()">
+        <br>
         Favorite
         <br>
-        <input type="text" style="width: 100%; height: 500px; width: 500px; word-wrap: inherit" id="text" onchange="addBlog()">
+        <input type="text" id="text" onkeypress="addBlog()" onkeyup="addBlog()">
+        
     </body>
 </html>

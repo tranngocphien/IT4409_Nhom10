@@ -9,18 +9,50 @@ and open the template in the editor.
         <title>TODO supply a title</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            p {
+                margin: 8px;
+                line-height: 24px;
+            }
+        </style>
         <script>
-            
-            const cookieValue = document.cookie
-                .split('; ')
-                .find(row => row.startsWith('favorite='))
-  .             split('=')[1];
-            function getCookie(){
-                document.getElementById('text').innerHTML = cookieValue;
+
+            function getCookie(cname) {
+                var name = cname + "=";
+                var decodedCookie = decodeURIComponent(document.cookie);
+                var ca = decodedCookie.split(';');
+                for (var i = 0; i < ca.length; i++) {
+                    var c = ca[i];
+                    while (c.charAt(0) == ' ') {
+                        c = c.substring(1);
+                    }
+                    if (c.indexOf(name) == 0) {
+                        return c.substring(name.length, c.length);
+                    }
+                }
+                return "";
+            }
+
+            function getCookie() {
+                var cookieValueName = document.cookie
+                        .split('; ')
+                        .find(row => row.startsWith('name='))
+                        .split('=')[1];
+                var cookieValueFavorite = document.cookie
+                        .split('; ')
+                        .find(row => row.startsWith('favorite='))
+                        .split('=')[1];
+
+
+                document.getElementById('text').innerHTML = cookieValueFavorite;
+                document.getElementById('name').innerHTML = cookieValueName;
             }
         </script>
     </head>
     <body onload="getCookie()">
+        <h2>Name</h2>
+        <p id="name"></p>
+        <h2>Favorite</h2>
         <p id="text"></p>
     </body>
 </html>
