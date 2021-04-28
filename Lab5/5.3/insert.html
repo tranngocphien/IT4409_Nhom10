@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            .flex{
+                display: flex;
+            }
+            div div{
+                width: 200px;
+            }
+
+            div{
+                margin: 8px;
+            }
+
+
+        </style>
+    </head>
+    <body>
+        <form action="insert.php" method="post">
+            <div class="flex">
+                <div>Item Description:</div><input type="text" name="product_desc">
+            </div>
+            <div class="flex">
+                <div>Weight:</div><input type="text" name="weight">
+            </div>
+            <div class="flex">
+                <div>Cost:</div><input type="text" name="cost">
+            </div>
+            <div class="flex">
+                <div>Number Available   :</div><input type="text" name="number_available">
+            </div>
+            <div><input type="submit" value="Click to submit" onclick=""><input type="button" value="Reset"></div>
+
+        </form>
+
+
+    </body>
+</html>
